@@ -32,7 +32,7 @@ mongoose.connect(URL
 
 
 app.get('/hell',(req,res)=>{
-    console.log('hellow');
+    console.log('hellow world');
     
 })
 
