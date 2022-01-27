@@ -1,0 +1,25 @@
+{
+  "name": "book_management_back_end",
+  "version": "1.0.0",
+  "description": "back end - book management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakindu-banneheka/book_management_back_end.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lakindu-banneheka/book_management_back_end/issues"
+  },
+  "homepage": "https://github.com/lakindu-banneheka/book_management_back_end#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8"
+  }
+}
