@@ -11,26 +11,23 @@ const cors=require('cors')
 app.use(cors())
 app.use(express.json())
 
+const PORT = process.env.PORT;
 
+const URL = process.env.MONGO_URL;
 ///connect database
-/*
 
-mongoose.connect('mongodb://localhost:27017/e-com',{
-   
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    //useCreateIndex: true,
-    //useFindAndModify: false,
-},(error)=>{
+
+mongoose.connect(URL
+,(error)=>{
     if(!error){
-        console.log("succses connect")
+        console.log("Mongo DB connection Success !")
     }
     else{
         console.log(error)
     }
 })
 
-*/
+
 
 
 
@@ -44,3 +41,4 @@ app.listen(process.env.PORT,(err)=>{
    console.log(`server listen  `);
    }
 })
+
