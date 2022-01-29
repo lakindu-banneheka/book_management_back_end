@@ -1,15 +1,17 @@
 const express=require("express");
-const app=express();
-const env=require("dotenv")
+const app = express();
+const env = require("dotenv")
 env.config();
-const mongoose=require("mongoose")
-const path=require('path')
-const cors=require('cors')
+const mongoose = require("mongoose")
+const path = require('path')
+const cors = require('cors')
+
 
 
 //middleware
 app.use(cors())
 app.use(express.json())
+
 
 const PORT = process.env.PORT;
 
@@ -29,16 +31,22 @@ mongoose.connect(URL
 
 
 
+const bRoute = require('./routes/BookRoutes')
 
-
-app.get('/hell',(req,res)=>{
+app.use('/Bookstore',/*(req,res)=>{
     console.log('hellow world');
     
-})
+}*/  bRoute)
 
-app.listen(process.env.PORT,(err)=>{
+app.listen(PORT,(err)=>{
    if(!err){   
-   console.log(`server listen  `);
+   console.log(`server listning on PORT ${PORT}  `);
    }
 })
 
+/*
+1 ) created  2 folders models,routes
+model for objects,schemas
+routes for routes
+2)
+*/
