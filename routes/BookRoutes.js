@@ -8,7 +8,6 @@ router.route("/addbook").post( async(req,res) => {              //create new doc
     //getting values from front-end
     //const <schema component name> = req.body. <front-end-sending name>
     const name = req.body.name;
-    const id = req.body.id;
     const author = req.body.author;
     const quantity =Number (req.body.quantity);
     const price = Number(req.body.price);
@@ -17,7 +16,6 @@ router.route("/addbook").post( async(req,res) => {              //create new doc
 
     const newBook = new Book ({
         name,
-        id,
         author,
         quantity,
         price,
@@ -45,11 +43,10 @@ router.route("/").get( (req, res) => {                              //fetches al
 router.route("/update-book/:id").post( async(req,res) => {          
     let bookId =  req.params.id;
 
-    const {name, id , author , quantity , price , lanuage , publisher } = req.body;
+    const {name, author , quantity , price , lanuage , publisher } = req.body;
 
     const updateBook = {
         name,
-        id,
         author,
         quantity,
         price,
