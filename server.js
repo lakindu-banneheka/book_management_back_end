@@ -6,47 +6,29 @@ const mongoose = require("mongoose")
 const path = require('path')
 const cors = require('cors')
 
+// routes
+const bookRoutes = require('./src/routes/BookRoutes')
 
-
-//middleware
-app.use(cors())
-app.use(express.json())
-
-
-const PORT = process.env.PORT;
-
-const URL = process.env.MONGO_URL;
-///connect database
-
-
-mongoose.connect(URL
+//connect database
+mongoose.connect( process.env.MONGO_URL
 ,(error)=>{
     if(!error){
-        console.log("Mongo DB connection Success !")
+        console.log("DataBase Connected")
     }
     else{
         console.log(error)
     }
 })
 
+//middleware
+app.use(cors())
+app.use(express.json())
+
+app.use('/api', bookRoutes)
 
 
-const bRoute = require('./routes/BookRoutes')
-
-app.use('/Bookstore',/*(req,res)=>{
-    console.log('hellow world');
-    
-}*/  bRoute)
-
-app.listen(PORT,(err)=>{
+app.listen( process.env.PORT ,(err)=>{
    if(!err){   
-   console.log(`server listning on PORT ${PORT}  `);
+   console.log(`server is running in on port ${process.env.PORT}  `);
    }
-})
-
-/*
-1 ) created  2 folders models,routes
-model for objects,schemas
-routes for routes
-2)
-*/
+});
